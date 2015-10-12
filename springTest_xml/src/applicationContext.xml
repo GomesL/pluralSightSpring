@@ -11,8 +11,12 @@
 <!-- 	</bean> -->
 
 <!-- 	constructor injection -->
-	<bean name="customerService" class="org.luke.service.CustomerServiceImpl">
+	<!-- <bean name="customerService" class="org.luke.service.CustomerServiceImpl">
 		<constructor-arg index="0" ref="customerRepository"></constructor-arg>
+ 	</bean> -->
+
+	<bean name="customerService" class="org.luke.service.CustomerServiceImpl" autowire="constructor">
+<!-- 		<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
  	</bean>
 
 </beans>
