@@ -10,11 +10,16 @@ public class CustomerServiceImpl implements CustomerService {
 	//private customerRepository cm = new hibernateCustomerRepositoryImpl();
 	private CustomerRepository customerRepository;
 	
-	public void setCustomerRepository(CustomerRepository customerRepository) {
-		this.customerRepository = customerRepository;
+	// default constructor is need if autowire by type
+	public CustomerServiceImpl(){
+		
 	}
 	
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}
+	
+	public void setCustomerRepository(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 

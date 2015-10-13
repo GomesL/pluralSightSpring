@@ -5,18 +5,26 @@
 
 	<bean name="customerRepository" class="org.luke.repository.HibernateCustomerRepositoryImpl"/>
 	
-<!-- 	setter injection -->
+									<!-- 	setter injection -->
+									
 <!-- 	<bean name="customerService" class="org.luke.service.CustomerServiceImpl"> -->
 <!-- 		<property name="customerRepository" ref="customerRepository"></property> -->
 <!-- 	</bean> -->
 
-<!-- 	constructor injection -->
+									<!-- 	constructor injection -->
+									
 	<!-- <bean name="customerService" class="org.luke.service.CustomerServiceImpl">
 		<constructor-arg index="0" ref="customerRepository"></constructor-arg>
  	</bean> -->
 
-	<bean name="customerService" class="org.luke.service.CustomerServiceImpl" autowire="constructor">
-<!-- 		<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
- 	</bean>
+									<!-- 	autowire -->
+
+<!-- 	<bean name="customerService" class="org.luke.service.CustomerServiceImpl" autowire="constructor"/> -->
+
+<!-- 	if autowire by type, it requires default constructor & setter method. This will look for a constructor with the input customerRepository-->
+<!-- 	<bean name="customerService" class="org.luke.service.CustomerServiceImpl" autowire="byType"/> -->
+	
+<!-- 	This will be looking at set+"customerRepository" method -->
+	<bean name="customerService" class="org.luke.service.CustomerServiceImpl" autowire="byName"/>
 
 </beans>
