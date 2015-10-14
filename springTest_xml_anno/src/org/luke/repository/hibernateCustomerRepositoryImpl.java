@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.luke.model.Customer;
+import org.springframework.stereotype.Repository;
 
-public class hibernateCustomerRepositoryImpl implements customerRepository {
+@Repository("customerRepository")
+public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	
 	/* (non-Javadoc)
 	 * @see org.luke.repository.customerRepository#findAll()

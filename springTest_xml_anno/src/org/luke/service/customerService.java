@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.luke.model.Customer;
 
-public interface customerService {
+public interface CustomerService {
 
 	List<Customer> findAll();
 

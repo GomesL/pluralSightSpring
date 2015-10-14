@@ -3,19 +3,19 @@ package org.luke.service;
 import java.util.List;
 
 import org.luke.model.Customer;
-import org.luke.repository.customerRepository;
-import org.luke.repository.hibernateCustomerRepositoryImpl;
+import org.luke.repository.CustomerRepository;
+import org.luke.repository.HibernateCustomerRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class customerServiceImpl implements customerService {
+@Service("customerService")
+public class CustomerServiceImpl implements CustomerService {
 	
-	private customerRepository cm = new hibernateCustomerRepositoryImpl();
+	@Autowired
+	private CustomerRepository customerRepository;
 	
-	/* (non-Javadoc)
-	 * @see org.luke.service.customerService#findAll()
-	 */
-	@Override
 	public List<Customer> findAll(){
-		return cm.findAll();
+		return customerRepository.findAll();
 	}
 
 }
