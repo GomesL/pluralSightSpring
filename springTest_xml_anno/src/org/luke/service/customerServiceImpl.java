@@ -11,9 +11,24 @@ import org.springframework.stereotype.Service;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 	
-	@Autowired
+	//@Autowired // 
 	private CustomerRepository customerRepository;
 	
+	public CustomerServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	//@Autowired // constructor injection
+	public CustomerServiceImpl(CustomerRepository customerRepository){
+		System.out.println("Constructor Injection Begins....");
+		this.customerRepository = customerRepository;
+	}
+	
+	@Autowired //setter injection
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}
+
 	public List<Customer> findAll(){
 		return customerRepository.findAll();
 	}

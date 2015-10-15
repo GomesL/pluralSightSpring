@@ -1,0 +1,14 @@
+							-----------SPRING NOTES---------------------
+
+* If setter injection used, must implement default constructor
+* @component implementations are @repository,@service and @controller.
+	
+	@repos - suggest a repo
+	@serv - suggest it's a service
+	@cont - suggest it as a controller
+
+* Injection types
+	* Member injection
+	* Setter
+	* Constructor
+
