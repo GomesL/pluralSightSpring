@@ -5,10 +5,12 @@ import java.util.List;
 import org.luke.model.Customer;
 import org.luke.repository.CustomerRepository;
 import org.luke.repository.HibernateCustomerRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class CustomerServiceImpl implements CustomerService {
 	
-//	private CustomerRepository cm = new HibernateCustomerRepositoryImpl();
+	//autowire
+	
 	private CustomerRepository customerRepository;
 	
 	
@@ -27,8 +29,9 @@ public class CustomerServiceImpl implements CustomerService {
 	/*
 	 * Constructor Injection
 	 */
-	
+	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
+		System.out.println("Member Injection used");
 		this.customerRepository = customerRepository;
 	}
 
