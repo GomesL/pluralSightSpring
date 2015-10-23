@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class CustomerServiceImpl implements CustomerService {
 	
-	//autowire
+	//autowire member injection
 	
 	private CustomerRepository customerRepository;
 	
@@ -27,11 +27,11 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	/*
-	 * Constructor Injection
+	 * Setter Injection
 	 */
 	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
-		System.out.println("Member Injection used");
+		System.out.println("Setter Injection used");
 		this.customerRepository = customerRepository;
 	}
 

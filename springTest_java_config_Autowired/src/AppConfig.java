@@ -25,13 +25,13 @@ public class AppConfig {
 		/*
 		 * This is for constructor injection by using java config
 		 */
-		CustomerServiceImpl customerService = new CustomerServiceImpl(getCustomerRepository());
+		CustomerServiceImpl customerService = new CustomerServiceImpl();
 		
 		return customerService;
 	}
 	
-	@Bean(name="customerRepository")
-	public CustomerRepository getCustomerRepository(){
-		return new HibernateCustomerRepositoryImpl();
-	}
+//	@Bean(name="customerRepository")
+//	public CustomerRepository getCustomerRepository(){
+//		return new HibernateCustomerRepositoryImpl();
+//	}
 }
